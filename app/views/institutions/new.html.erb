@@ -1,16 +1,4 @@
 <h3>Cadastro de Instituição</h3>
 <%= flash[:error] %>
-<%= simple_form_for @institution do |f| %>
-  <%= f.input :name, label: 'Nome:', placeholder: 'Nome' %>
-  <%= f.input :email, label: 'Email:', placeholder: 'Email' %>
-  <%= f.input :address, label: 'Endereço:',placeholder: 'Logradouro' %>
-  <%= f.input :neighborhood, label: 'Bairro:',placeholder: 'Bairro' %>
-  <%= f.input :postal_code, label: 'CEP:',placeholder: 'Cep' %>
-  <%= f.input :city, label: 'Cidade:',placeholder: 'Cidade' %>
-  <%= f.input :state, label: 'Estado:',placeholder: 'Estado' %>
-  <%= f.input :phone, label: 'Telefone:',placeholder: 'Telefone' %>
-  <%= f.input :contact, label: 'Contato:',placeholder: 'Contato' %>
-  <%= f.input :work, label: 'Trabalho:',placeholder: 'Trabalho' %>
-  <%= f.input :site, label: 'Site:',placeholder: 'Site' %>
-  <%= f.button :submit, 'Cadastrar' %>
-<% end %>
+<%= render partial: "form",
+           locals: { submit_label: "Cadastrar Instituição"} %> 

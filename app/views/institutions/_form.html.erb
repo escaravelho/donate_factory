@@ -1,0 +1,14 @@
+<%= simple_form_for @institution do |f| %>
+  <%= f.input :name, label: 'Nome:' %>
+  <%= f.input :email, label: 'Email:' %>
+  <%= f.input :address, label: 'Endereço:' %>
+  <%= f.input :neighborhood, label: 'Bairro:' %>
+  <%= f.input :postal_code, label: 'CEP:' %>
+  <%= f.input :city, label: 'Cidade:' %>
+  <%= f.input :state, label: 'Estado:' %>
+  <%= f.input :phone, label: 'Telefone:' %>
+  <%= f.input :contact, label: 'Contato:' %>
+  <%= f.input :work, label: 'Trabalho:' %>
+  <%= f.input :site, label: 'Site:' %>
+  <%= f.button :submit, submit_label %>
+<% end %>
