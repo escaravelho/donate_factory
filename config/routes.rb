@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'institution#index'
-
-  get '/institutions/search', to: 'institution#search', as: 'search'
+  root 'institutions#index'
+  get '/institutions/search', to: 'institutions#search', as: 'search'
+  resources :institutions, only: [:new, :create, :show]
 end
