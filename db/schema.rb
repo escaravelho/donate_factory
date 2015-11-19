@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118000549) do
+ActiveRecord::Schema.define(version: 20151118230610) do
 
   create_table "institutions", force: :cascade do |t|
     t.string   "name"
     t.string   "state"
     t.string   "city"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "email"
     t.string   "address"
     t.string   "postal_code"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20151118000549) do
     t.string   "contact"
     t.text     "work"
     t.string   "site"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end
