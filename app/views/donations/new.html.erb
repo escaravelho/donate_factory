@@ -1,0 +1,11 @@
+<%= @donation.institution.name %>
+<%= simple_form_for [@donation.institution, @donation] do |donation| %>
+  <%= donation.input :name, label: 'Nome:', placeholder: 'Digite seu nome...' %>
+  <%= donation.input :type_of_donation, collection: Donation::LABELS,
+                     label: 'Tipo de Doação:' %>
+  <%= donation.input :mail, label: 'E-Mail:',
+                    placeholder: 'Digite seu e-mail...' %>
+  <%= donation.input :phone, label: 'Telefone:',
+                     placeholder: 'Digite seu telefone...' %>
+  <%= donation.button :submit, 'Doar' %>
+<% end %>

@@ -1,5 +1,6 @@
-<%= @institutions.each do |institution| %>
+<% @institutions.each do |institution| %>
  <%= institution.name %>
  <%= institution.city %>
  <%= institution.state %>
+ <%= link_to 'Doar', new_institution_donation_path(institution) %>
 <% end %>
