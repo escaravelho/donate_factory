@@ -11,5 +11,6 @@ FactoryGirl.define do
     contact 'Jhon'
     work 'Ensinando crianças a codar!!!'
     site 'www.campuscode.com.br'
+    inactive false
   end
 end

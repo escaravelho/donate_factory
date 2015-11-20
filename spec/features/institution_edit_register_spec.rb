@@ -17,7 +17,7 @@ feature 'Institution edit register' do
     fill_in 'Trabalho:', with: 'Cuidando de crianças'
     fill_in 'Site:', with: 'www.horasdeacao.org'
 
-    click_on 'Atualizar Instituição'
+    click_on 'Cadastrar'
 
     expect(page).to have_content 'Horas de Ação'
     expect(page).to have_content 'horas@horasdeacao.org'
@@ -39,7 +39,7 @@ feature 'Institution edit register' do
 
     fill_in 'Nome:', with: ''
 
-    click_on 'Atualizar Instituição'
+    click_on 'Cadastrar'
 
     expect(page).to have_content 'Por favor, verifique os campos obrigatórios'
   end
