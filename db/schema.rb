@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20151119212047) do
     t.string   "name"
     t.string   "state"
     t.string   "city"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "email"
     t.string   "address"
     t.string   "postal_code"
@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 20151119212047) do
     t.string   "contact"
     t.text     "work"
     t.string   "site"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

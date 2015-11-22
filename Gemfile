@@ -29,6 +29,8 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'simple_form'
 
+gem "paperclip", "~> 4.3"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
