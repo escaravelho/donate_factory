@@ -1,4 +1,5 @@
 class Institution < ActiveRecord::Base
+  has_many :donations
   validates :name, :email, :address, :neighborhood, :postal_code, :city, :state,
             :phone, :work, presence: true
 
@@ -7,6 +8,6 @@ class Institution < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: %r{\Aimage\/.*\Z}
 
   def self.search_by_city(city)
-    Institution.where('city LIKE ?', city)
+    Institution.where('city LIKE ?', "%#{city}%")
   end
 end
