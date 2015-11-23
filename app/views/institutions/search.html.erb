@@ -2,4 +2,5 @@
  <%= institution.name %>
  <%= institution.city %>
  <%= institution.state %>
-<% end %><br>
+ <%= link_to 'Doar', new_institution_donation_path(institution) %>
+<% end %>

@@ -13,6 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20151119225653) do
 
+  create_table "donations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type_of_donation"
+    t.string   "phone"
+    t.string   "mail"
+    t.integer  "institution_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "donations", ["institution_id"], name: "index_donations_on_institution_id"
+
   create_table "institutions", force: :cascade do |t|
     t.string   "name"
     t.string   "state"
