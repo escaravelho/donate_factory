@@ -31,6 +31,7 @@ gem 'simple_form'
 
 gem "paperclip", "~> 4.3"
 
+gem 'geocoder'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
