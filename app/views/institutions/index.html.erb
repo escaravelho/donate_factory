@@ -6,8 +6,9 @@
         <p>Pesquise instituições na sua cidade para fazer suas doações.</p>
         <%= form_tag(search_path, method: 'get', class: 'form-inline') do %>
         <div class="form-group">
-          <%= label_tag(:city, 'Pesquisar') %>
-          <%= text_field_tag(:city, nil, class: 'form-control') %>
+          <label for="city">Pesquisa</label>
+          <%= text_field_tag(:city, nil, class: 'form-control',
+                             placeholder: 'Digite a Cidade...') %>
         </div>
         <%= submit_tag('Pesquisar', class: 'btn btn-primary') %>
         <% end %>

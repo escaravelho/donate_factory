@@ -14,6 +14,7 @@ feature 'register institution' do
     fill_in 'Contato:', with: 'Paulo'
     fill_in 'Trabalho:', with: 'Atendimentos humanitários'
     fill_in 'Site:', with: 'www.msf.org'
+    uncheck 'Inativo'
 
     click_on 'Cadastrar'
 

@@ -8,6 +8,6 @@ class Institution < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: %r{\Aimage\/.*\Z}
 
   def self.search_by_city(city)
-    Institution.where('city LIKE ?', "%#{city}%")
+    Institution.where('city LIKE ? AND inactive = ?', "%#{city}%", false)
   end
 end

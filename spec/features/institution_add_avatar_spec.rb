@@ -15,6 +15,7 @@ feature 'institution add avatar' do
     fill_in 'Trabalho:', with: 'Atendimentos humanitários'
     fill_in 'Site:', with: 'www.msf.org'
     attach_file('Selecione uma foto:', 'spec/images/avatar.jpg')
+    uncheck 'Inativo'
 
     click_on 'Cadastrar'
 
