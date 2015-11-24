@@ -7,6 +7,7 @@ describe 'Visitor should finds institution' do
     visit root_path
 
     fill_in 'Pesquisa', with: 'São Paulo'
+
     click_on 'Pesquisar'
 
     expect(page).to have_content institution.city

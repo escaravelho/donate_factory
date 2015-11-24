@@ -1,0 +1,25 @@
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag institution.avatar.url(:medium),
+                                           html: {class: 'media-object'} %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%=institution.name%></h4>
+    <hr>
+    <dl>
+      <dt>Endereço</dt>
+      <dd><%="#{institution.address}, #{institution.neighborhood},
+              #{institution.postal_code}"%></dd>
+      <dt>Cidade / UF</dt>
+      <dd><%="#{institution.city} / #{institution.state}" %></dd>
+      <dt>Telefone / Contato</dt>
+      <dd><%= "#{institution.phone} / #{institution.contact}" %></dd>
+      <dt>Site</dt>
+      <dd><%= institution.site %></dd>
+    </dl>
+    <%= link_to 'Doar', new_institution_donation_path(institution),
+                        class: 'btn btn-success' %>
+  </div>
+</div>

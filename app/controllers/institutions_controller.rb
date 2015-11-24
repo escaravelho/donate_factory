@@ -4,7 +4,8 @@ class InstitutionsController < ApplicationController
   end
 
   def search
-    @institutions = Institution.search_by_city(params[:city])
+    @query = params[:q]
+    @institutions = Institution.search_by_city(@query)
   end
 
   def new
