@@ -8,6 +8,7 @@ class DonationsController < ApplicationController
     @donation = Donation.new(donation_params)
     @donation.institution = Institution.find(params[:institution_id])
     if @donation.save
+      ModelMailer.new_record_notification(@donation)
       redirect_to [@donation.institution, @donation]
     end
   end
