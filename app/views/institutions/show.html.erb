@@ -22,6 +22,10 @@
       <dd><%= @institution.site %></dd>
       <dt>Trabalho</dt>
       <dd><%= @institution.work %></dd>
+      <dt>Instituição Ativa</dt>
+      <dd id="Ativo">
+        <%= @institution.inactive ? "Inativo" : "Ativo" %>
+      </dd>
       <dt>Coleta Doações</dt>
       <dd id="collect-donations">
         <%= @institution.collect_donations? ? "Sim" : "Não" %>
