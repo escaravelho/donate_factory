@@ -11,7 +11,7 @@
 <%= @institution.work %><br>
 <%= @institution.site %><br>
 <%= image_tag @institution.avatar.url(:thumb) %><br>
-<%= @institution.inactive %><br>
+<%= @institution.inactive ? "Inativo" : "Ativo" %><br>
 <div id="collect-donations">
   <%= @institution.collect_donations? ? "Sim" : "Não" %>
 </div>
