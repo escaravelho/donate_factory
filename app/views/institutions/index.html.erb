@@ -3,12 +3,12 @@
     <div class="text-center">
       <div class="jumbotron">
         <h1>Fábrica de Doações</h1>
-        <p>Pesquise instituições na sua cidade para fazer suas doações.</p>
+        <p>Encontre instituições em sua cidade, e faça suas doações.</p>
         <%= form_tag(search_path, method: 'get', class: 'form-inline') do %>
         <div class="form-group">
-          <label for="city">Pesquisa</label>
-          <%= text_field_tag(:city, nil, class: 'form-control',
-                             placeholder: 'Digite a Cidade...') %>
+          <%= label_tag(:q, "Pesquisar:") %>
+          <%= text_field_tag(:q, nil, class: 'form-control',
+                             placeholder: 'Digite uma cidade...') %>
         </div>
         <%= submit_tag('Pesquisar', class: 'btn btn-primary') %>
         <% end %>
