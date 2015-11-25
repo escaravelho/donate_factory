@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DonateFactory</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<div class="container">
-  <%= yield %>
-</div>
-
-
-</body>
+  <head>
+    <title>DonateFactory</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <% flash.each do |type, message| %>
+        <div class="alert <%= alert_class_for(type) %>">
+          <button class="close" data-dismiss="alert">×</button>
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
 </html>
