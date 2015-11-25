@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119225653) do
+ActiveRecord::Schema.define(version: 20151124222028) do
 
   create_table "donations", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20151119225653) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "inactive"
+    t.boolean  "collect_donations"
   end
 
 end

@@ -4,7 +4,8 @@ class InstitutionsController < ApplicationController
   end
 
   def search
-    @institutions = Institution.search_by_city(params[:city])
+    @query = params[:q]
+    @institutions = Institution.search_by_city(@query)
   end
 
   def new
@@ -46,6 +47,6 @@ class InstitutionsController < ApplicationController
     params.require(:institution).permit(:name, :email, :address, :neighborhood,
                                         :postal_code, :city, :state, :phone,
                                         :contact, :work, :site, :avatar,
-                                        :inactive)
+                                        :inactive, :collect_donations)
   end
 end

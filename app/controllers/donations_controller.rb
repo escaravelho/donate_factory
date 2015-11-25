@@ -8,8 +8,11 @@ class DonationsController < ApplicationController
     @donation = Donation.new(donation_params)
     @donation.institution = Institution.find(params[:institution_id])
     if @donation.save
-      ModelMailer.new_record_notification(@donation)
+      flash[:success] = 'Doação registrada com sucesso.'
       redirect_to [@donation.institution, @donation]
+    else
+      flash[:error] = 'Não foi possível registrar sua doação.'
+      render :new
     end
   end
 

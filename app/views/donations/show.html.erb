@@ -1,5 +1,14 @@
-<h1>Doação realizada!</h1>
-
-<p>Nome do Doador: <%="#{@donation.name}"%></p>
-<p>E-Mail do Doador: <%="#{@donation.mail}"%></p>
-<p>Tipo de Doação: <%="#{@donation.type_of_donation}"%></p>
+<h1>Confirmação de Doação</h1>
+<hr>
+<% if @donation.institution.collect_donations? %>
+  <p>A instituição entrará em contato para agendar a coleta da sua doação.</p>
+<% end %>
+<p>
+Obrigado <%="#{@donation.name}"%> (<%= @donation.mail%>), <br>
+Sua doação de <%= @donation.type_of_donation %> será muito bem vinda para a
+instituição <%= @donation.institution.name %>
+</p>
+<p>
+  A instituição <%= @donation.institution.name%> receberá a notificação da
+  sua doação.
+</p>

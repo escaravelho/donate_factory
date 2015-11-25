@@ -1,16 +1,38 @@
-<%= simple_form_for @institution, html: { multipart: true } do |f| %>
-  <%= f.input :name, label: 'Nome:' %>
-  <%= f.input :email, label: 'Email:' %>
-  <%= f.input :address, label: 'Endereço:' %>
-  <%= f.input :neighborhood, label: 'Bairro:' %>
-  <%= f.input :postal_code, label: 'CEP:' %>
-  <%= f.input :city, label: 'Cidade:' %>
-  <%= f.input :state, label: 'Estado:' %>
-  <%= f.input :phone, label: 'Telefone:' %>
-  <%= f.input :contact, label: 'Contato:' %>
-  <%= f.input :work, label: 'Trabalho:' %>
-  <%= f.input :site, label: 'Site:' %>
-  <%= f.input :avatar, label: 'Selecione uma foto:', as: :file %>
-  <%= f.input :inactive, label: 'Inativo', as: :boolean %>
-  <%= f.button :submit, submit_label %>
-<% end %>
+<div class='row'>
+  <div class='col-md-10'>
+    <%= simple_form_for @institution, html: { multipart: true,
+                                              class: 'form-horizontal' },
+        wrapper: :horizontal_form,
+        wrapper_mappings: {
+          check_boxes: :horizontal_radio_and_checkboxes,
+          file: :horizontal_file_input,
+          boolean: :horizontal_boolean
+        } do |f| %>
+        <%= f.input :name, placeholder: 'Digite seu nome', label: 'Nome:' %>
+        <%= f.input :email, placeholder: 'Digite seu email', label: 'Email:' %>
+        <%= f.input :address, placeholder: 'Digite seu endereço',
+                    label: 'Endereço:' %>
+        <%= f.input :neighborhood, placeholder: 'Digite seu bairro',
+                    label: 'Bairro:' %>
+        <%= f.input :postal_code, placeholder: 'Digite seu CEP',
+                    label: 'CEP:' %>
+        <%= f.input :city, placeholder: 'Digite sua cidade', label: 'Cidade:' %>
+        <%= f.input :state, placeholder: 'Digite seu estado',
+                    label: 'Estado:' %>
+        <%= f.input :phone, placeholder: 'Digite seu telefone',
+                    label: 'Telefone:' %>
+        <%= f.input :contact, placeholder: 'Digite o nome do contato',
+                    label: 'Contato:' %>
+        <%= f.input :work, placeholder: 'Digite o foco da instituição',
+                    label: 'Trabalho:' %>
+        <%= f.input :site, placeholder: 'Digite o endereço do site',
+                    label: 'Site:' %>
+        <%= f.input :avatar, label: 'Selecione uma foto:', as: :file %>
+        <%= f.input :collect_donations, label: 'Recolhe Doações',
+                    as: :boolean %>
+        <%= f.input :inactive, label: 'Inativo', as: :boolean %>
+        <%= f.button :submit, submit_label %>
+      <% end %>
+    </div>
+  </div>
+</div>

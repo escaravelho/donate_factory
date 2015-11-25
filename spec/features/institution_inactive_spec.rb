@@ -21,17 +21,7 @@ feature 'Institution inactive register' do
 
     click_on 'Cadastrar'
 
-    expect(page).to have_content 'Instituição'
-    expect(page).to have_content 'campus@campuscode.com'
-    expect(page).to have_content 'Alameda Santos 1293'
-    expect(page).to have_content 'Centro'
-    expect(page).to have_content '05434670'
-    expect(page).to have_content 'São Paulo'
-    expect(page).to have_content 'São Paulo'
-    expect(page).to have_content 1_145_678_900
-    expect(page).to have_content 'Jhon'
-    expect(page).to have_content 'Ensinando crianças a codar!!!'
-    expect(page).to have_content 'www.campuscode.com.br'
-    expect(page).to have_xpath("//img[contains(@src, 'avatar.jpg')]")
+    expect(page).to have_content institution.name
+    expect(page).to have_content 'Inativo'
   end
 end

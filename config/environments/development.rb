@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -46,6 +46,6 @@ Rails.application.configure do
     :port => 587,
     :domain => "sandbox17a9434e46274934b59f4ef9c5b5a8a0.mailgun.org",
     :user_name => "postmaster@sandbox17a9434e46274934b59f4ef9c5b5a8a0.mailgun.org",
-    :password => "Campus1293"
+    :password => "33a30e19ff0d16ba6c28185439b0e9d6"
   }
 end
