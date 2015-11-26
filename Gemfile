@@ -31,6 +31,8 @@ gem 'simple_form'
 
 gem "paperclip", "~> 4.3"
 
+gem 'devise'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
