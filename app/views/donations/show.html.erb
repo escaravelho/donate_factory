@@ -5,6 +5,10 @@
 <% end %>
 <p>
 Obrigado <%="#{@donation.name}"%> (<%= @donation.mail%>), <br>
-Sua doação de <%= @donation.type_of_donation %> será muito bem vinda para a 
+Sua doação de <%= @donation.type_of_donation %> será muito bem vinda para a
 instituição <%= @donation.institution.name %>
+</p>
+<p>
+  A instituição <%= @donation.institution.name%> receberá a notificação da
+  sua doação.
 </p>

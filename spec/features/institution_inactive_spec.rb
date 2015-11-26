@@ -22,8 +22,6 @@ feature 'Institution inactive register' do
     click_on 'Cadastrar'
 
     expect(page).to have_content institution.name
-    #within('#collect-donations') do
-      expect(page).to have_content 'Inativo'
-    #end
+    expect(page).to have_content 'Inativo'
   end
 end

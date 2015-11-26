@@ -32,7 +32,7 @@ describe 'Visitor should register donation' do
     click_on 'Doar'
 
     expect(page).to have_content 'Doação registrada com sucesso.'
-    expect(page).to have_content 'A instituição entrará em contato para agendar 
+    expect(page).to have_content 'A instituição entrará em contato para agendar
                                  a coleta da sua doação.'
   end
 
