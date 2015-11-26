@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124222028) do
+ActiveRecord::Schema.define(version: 20151126185840) do
 
   create_table "donations", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20151124222028) do
   end
 
   add_index "donations", ["institution_id"], name: "index_donations_on_institution_id"
+
+  create_table "galleries", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "institution_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "galleries", ["institution_id"], name: "index_galleries_on_institution_id"
 
   create_table "institutions", force: :cascade do |t|
     t.string   "name"
@@ -46,5 +55,18 @@ ActiveRecord::Schema.define(version: 20151124222028) do
     t.boolean  "inactive"
     t.boolean  "collect_donations"
   end
+
+  create_table "photos", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "institution_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "photos", ["institution_id"], name: "index_photos_on_institution_id"
 
 end

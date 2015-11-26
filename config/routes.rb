@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :institutions, only: [:new, :create, :show, :edit, :update] do
     resources :donations, only: [:new, :create, :show]
   end
+
+  resources :galleries, only: [:new, :show, :create]
 end
