@@ -1,5 +1,6 @@
 class Institution < ActiveRecord::Base
   has_many :donations
+  has_many :photos
   validates :name, :email, :address, :neighborhood, :postal_code, :city, :state,
             :phone, :work, presence: true
 
