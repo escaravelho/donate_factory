@@ -9,6 +9,20 @@
   </head>
   <body>
     <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav pull-right">
+            <li role="presentation">
+              <% if administrator_signed_in? %>
+                <%= current_administrator.email %>
+                <%= link_to 'Sair', destroy_administrator_session_path, method: :delete %>
+              <% else %>
+                <%= link_to 'Entrar', new_administrator_session_path %>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <% flash.each do |type, message| %>
         <div class="alert <%= alert_class_for(type) %>">
           <button class="close" data-dismiss="alert">×</button>
