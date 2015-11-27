@@ -3,6 +3,8 @@ feature 'Institution inactive register' do
   scenario 'successfully' do
     institution = create(:institution)
 
+    login_administrator
+
     visit edit_institution_path(institution)
 
     fill_in 'Nome:', with: 'Instituição'
@@ -19,7 +21,7 @@ feature 'Institution inactive register' do
     attach_file('Selecione uma foto:', 'spec/images/avatar.jpg')
     check 'Inativo'
 
-    click_on 'Cadastrar'
+    click_on 'Atualizar'
 
     expect(page).to have_content institution.name
     expect(page).to have_content 'Inativo'

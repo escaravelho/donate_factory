@@ -1,5 +1,8 @@
 class InstitutionsController < ApplicationController
   before_action :set_institution, only: [:show, :edit, :update]
+  before_action :authenticate_administrator!, only: [:new, :create, :update,
+                                                     :edit]
+
   def index
   end
 

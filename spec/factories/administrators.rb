@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :administrator do
-    email 'contato@adolescentesdobem.com.br'
+    sequence :email do |n|
+      "contato#{n}@adolescentesdobem.com.br"
+    end
     password '12345678'
   end
 end

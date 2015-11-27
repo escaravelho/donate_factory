@@ -1,7 +1,12 @@
 require 'rails_helper'
+
 feature 'register institution' do
   scenario 'successfully' do
-    visit new_institution_path
+    login_administrator
+
+    visit root_path
+
+    click_on 'Criar Instituição'
 
     fill_in 'Nome:', with: 'Médicos Sem Fronteiras'
     fill_in 'Email:', with: 'contato@msf.org'
@@ -32,10 +37,8 @@ feature 'register institution' do
   end
 
   scenario 'unsuccessfully' do
-    visit new_institution_path
+    visit root_path
 
-    click_on 'Cadastrar'
-
-    expect(page).to have_content 'Por favor, verifique os campos obrigatórios'
+    expect(current_path).not_to have_content 'Criar Instituição'
   end
 end

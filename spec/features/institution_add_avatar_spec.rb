@@ -1,6 +1,8 @@
 require 'rails_helper'
 feature 'institution add avatar' do
   scenario 'sucessfully' do
+    login_administrator
+
     visit new_institution_path
 
     fill_in 'Nome:', with: 'Médicos Sem Fronteiras'

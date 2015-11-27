@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125220512) do
+ActiveRecord::Schema.define(version: 20151127011432) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20151125220512) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "institution_id"
   end
 
   add_index "administrators", ["email"], name: "index_administrators_on_email", unique: true
+  add_index "administrators", ["institution_id"], name: "index_administrators_on_institution_id"
   add_index "administrators", ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
 
   create_table "donations", force: :cascade do |t|
@@ -63,6 +65,9 @@ ActiveRecord::Schema.define(version: 20151125220512) do
     t.datetime "avatar_updated_at"
     t.boolean  "inactive"
     t.boolean  "collect_donations"
+    t.integer  "administrator_id"
   end
+
+  add_index "institutions", ["administrator_id"], name: "index_institutions_on_administrator_id"
 
 end

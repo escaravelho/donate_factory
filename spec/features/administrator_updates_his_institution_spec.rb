@@ -1,9 +1,8 @@
 require 'rails_helper'
-feature 'Institution edit register' do
+feature 'Administrator edits own institution' do
   scenario 'successfuly' do
-    institution = create(:institution)
-
-    login_administrator
+    admin = login_administrator
+    institution = create(:institution, administrator: admin)
 
     visit edit_institution_path(institution.id)
 
@@ -34,17 +33,14 @@ feature 'Institution edit register' do
     expect(page).to have_content 'www.horasdeacao.org'
   end
 
-  scenario 'unsuccessfuly' do
-    institution = create(:institution)
+  scenario 'does not edit other user institution' do
+    admin = login_administrator
 
-    login_administrator
+    institution = create(:institution, administrator: create(:administrator))
 
     visit edit_institution_path(institution.id)
 
-    fill_in 'Nome:', with: ''
-
-    click_on 'Atualizar'
-
-    expect(page).to have_content 'Por favor, verifique os campos obrigatórios'
+    expect(page).not_to have_content institution.name
+    expect(current_path).to eq root_path
   end
 end

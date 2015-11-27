@@ -4,6 +4,8 @@ feature 'Institution collect donation' do
   scenario 'successfully' do
     institution = create(:institution)
 
+    login_administrator
+
     visit new_institution_path
 
     fill_in 'Nome:', with: institution.name
