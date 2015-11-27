@@ -4,7 +4,6 @@ class PhotosController < ApplicationController
     institution = Institution.find(params[:institution_id])
 
     if @photo.save
-      binding.pry
       institution.photos << @photo
       flash[:success] = 'Doação registrada com sucesso.'
       redirect_to @photo.institution

@@ -9,7 +9,6 @@ feature 'Institution upload photos' do
     click_on 'Upload'
 
     #expect(page).to have_content 'Primeira'
-    binding.pry
     expect(page).to have_xpath("//img[contains(@src, 'avatar.jpg')]")
   end
 end

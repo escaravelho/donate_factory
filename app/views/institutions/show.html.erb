@@ -32,7 +32,7 @@
       </dd>
     </dl>
     <h5>Fotos</h5>
-    <%= simple_form_for [@institution, @institution.photos.build], html: { multipart: true,
+    <%= simple_form_for [@institution, @photo], html: { multipart: true,
                                               class: 'form-horizontal' },
         wrapper: :horizontal_form,
         wrapper_mappings: {
@@ -43,8 +43,9 @@
         <%= f.input :image, label: 'Selecione uma foto:', as: :file %>
         <%= f.submit 'Upload' %>
     <% end %>
-    <% binding.pry %>
-    <%= image_tag @institution.photos.first.image.url(:medium),
+    <% if @institution.photos.any? %>
+    <%= image_tag @institution.photos.last.image.url(:medium),
                                          html: {class: 'media-object'} %>
+    <% end %>
   </div>
 </div>

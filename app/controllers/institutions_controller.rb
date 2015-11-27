@@ -13,7 +13,7 @@ class InstitutionsController < ApplicationController
   end
 
   def show
-    
+    @photo = Photo.new(institution: @institution)
   end
 
   def create
